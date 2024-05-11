@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <!-- css file -->
+  <style>
+    body {
+  font-family: sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* body{} */
+/* for the game box div in which the entire code is contained */
+#gamebox {
+  height: 99vh;
+  width: 100vw;
+  background-color: rgb(10, 9, 9);
+  position: absolute;
+  overflow: hidden;
+}
+
+#userscore,
+#aiscore {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: rgb(243, 243, 244);
+  position: absolute;
+  font-size: 50px;
+  top: 12px;
+}
+/* for the user score */
+#userscore {
+  left: 40%;
+}
+/* for the computer score */
+#aiscore {
+  right: 40%;
+}
+
+/* for the dashed line in the center */
+.dashedlineverticle {
+  border: 2px dashed whitesmoke;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+/* for the user paddle */
+#userpaddle {
+  height: 100px;
+  width: 25px;
+  background-color: azure;
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  border-radius: 10px;
+  transform: translateY(-50%);
+}
+/* for the computer paddle */
+#aipaddle {
+  height: 100px;
+  width: 25px;
+  background-color: rgb(196, 53, 53);
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  border-radius: 10px;
+  transform: translateY(-50%);
+}
+/* for the max-score values */
+#maxscore {
+  height: auto;
+  width: auto;
+  color: white;
+  font-size: x-large;
+  position: absolute;
+  top: 15vh;
+  left: 25px;
+  display: inline-block;
+}
+
+#maxscore p {
+  display: inline-block;
+}
+/* for the start button */
+#button {
+  height: 50px;
+  width: 100px;
+  border-radius: 15px;
+  background-color: rgb(243, 241, 237);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  font-size: x-large;
+}
+/* the countdown timer */
+#timer {
+  height: auto;
+  width: auto;
+  background-color: rgb(10, 9, 9);
+  font-size: x-large;
+  position: absolute;
+  top: 20vh;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  color: white;
+}
+/* the user heading */
+.user {
+  height: auto;
+  width: auto;
+  font-size: x-large;
+  color: white;
+  position: absolute;
+  top: 30px;
+  left: 25px;
+}
+/* for the computer heading */
+.comp {
+  height: auto;
+  width: auto;
+  font-size: x-large;
+  color: white;
+  position: absolute;
+  top: 30px;
+  right: 25px;
+}
+/* for the ball  */
+#ball {
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+  background-color: rgb(53, 194, 255);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+  </style>
+
+
+  <body>
+    <!-- i have contained all the code in this main gamebox div -->
+    <div id="gamebox">
+      <!-- Score board section has user and cmputer and there respective scores and max score of the user -->
+      <div class="scoreboard">
+        <div class="user">User</div>
+        <div class="comp">Computer</div>
+        <div id="userscore">0</div>
+        <div id="aiscore">0</div>
+        <div id="timer"></div>
+        <div id="maxscore">
+          Max-Score :
+          <p id="score">0</p>
+        </div>
+      </div>
+      <!-- This is the start button which will start the game -->
+      <div>
+        <button id="button">Start</button>
+      </div>
+      <!-- this div is for dashed line in the center -->
+      <div class="dashedlineverticle"></div>
+      <!-- this div is for user paddle -->
+      <div id="userpaddle"></div>
+      <!-- this div is for computer paddle -->
+      <div id="aipaddle"></div>
+      <!-- this div is for the ball which is the main component of the game -->
+      <div id="ball"></div>
+    </div>
+  </body>
+  <!-- this is the link to javascript file -->
+  <script src="script.js"></script>
+</html>
